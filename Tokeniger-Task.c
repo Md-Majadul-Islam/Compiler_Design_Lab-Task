@@ -27,23 +27,18 @@ int main() {
     token = strtok(str, " ");
 
     while(token != NULL) {
-
-        // Check Keyword
         if(isKeyword(token)) {
             printf("%s : Keyword\n", token);
         }
-        // Check Integer
         else if(isdigit(token[0])) {
             printf("%s : Constant (Integer)\n", token);
         }
-        // Check Operator or Separator (single char)
         else if(strlen(token) == 1 && isOperator(token[0])) {
             printf("%s : Operator\n", token);
         }
         else if(strlen(token) == 1 && isSeparator(token[0])) {
             printf("%s : Separator\n", token);
         }
-        // Otherwise Identifier
         else {
             printf("%s : Identifier\n", token);
         }
